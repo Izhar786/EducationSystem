@@ -1,0 +1,88 @@
+﻿@model ParentUpdateViewModel
+@{
+    Layout = null;
+}
+
+<div class="modal fade" tabindex="-1" id="kt_modal_editParent">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-pen fs-2 text-danger"></i>
+                    Parent <small class="text-muted">Edit Record</small>
+                </h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="svg-icon svg-icon-2x"></span>
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+                <form method="post"
+                      asp-area="Admin" asp-controller="Parents" asp-action="Update"
+                      autocomplete="off" id="FrmUpdate">
+                    @Html.AntiForgeryToken()
+
+                    <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
+                    <input type="hidden" asp-for="ParentId"/>
+                    <div class="container">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-bold form-label required"
+                                   asp-for="Name">Name</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input class="form-control form-control-lg form-control-solid"
+                                   placeholder="Name" asp-for="Name" />
+                            <!--end::Input-->
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-bold form-label required"
+                                   asp-for="Cnic">CNIC</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input class="form-control form-control-lg form-control-solid"
+                                   placeholder="CNIC" asp-for="Cnic" />
+                            <!--end::Input-->
+                            <span asp-validation-for="Cnic" class="text-danger small"></span>
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-bold form-label required"
+                                   asp-for="GenderId">Gender</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <select class="form-select form-select-lg form-select-solid"
+                                    data-control="select2" data-placeholder="Select..."
+                                    data-allow-clear="true" data-hide-search="true"
+                                    asp-for="GenderId" asp-items="Model.Genders">
+                                <option>Select From List</option>
+                            </select>
+                            <!--end::Input-->
+                            <span asp-validation-for="GenderId" class="text-danger small"></span>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-save="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery-validate/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

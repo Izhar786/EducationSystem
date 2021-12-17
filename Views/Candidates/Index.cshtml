@@ -1,0 +1,200 @@
+﻿@{
+    ViewData["Title"] = "Candidates";
+}
+
+@section Styles{
+    <link href="~/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+}
+
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+    <!--begin::Container-->
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <!--begin::Page title-->
+        <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <!--begin::Title-->
+            <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
+                Candidates
+                <!--begin::Separator-->
+                <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+                <!--end::Separator-->
+                <!--begin::Description-->
+                <small class="text-muted fs-7 fw-bold my-1 ms-1">
+                    @DateTime.Now.ToString("dd MMM yyyy")
+                </small>
+                <!--end::Description-->
+            </h1>
+            <!--end::Title-->
+        </div>
+        <!--end::Page title-->
+        <!--begin::Actions-->
+        <div class="d-flex align-items-center py-1">
+            <!--begin::Wrapper-->
+            <div class="me-4">
+            </div>
+            <!--end::Wrapper-->
+            <!--begin::Button-->
+            <!--end::Button-->
+        </div>
+        <!--end::Actions-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container">
+
+        <!--begin::Card-->
+        <div class="card mb-5">
+            <!--begin::Card header-->
+            <div class="card-header border-0 pt-6">
+
+                <!--begin::Card title-->
+                <div class="card-title">
+                    <h2 class="anchor fw-bolder fs-3 mb-5" id="server-side">
+                        Searching
+                    </h2>
+                </div>
+                <!--begin::Card title-->
+                <!--begin::Card toolbar-->
+                <div class="card-toolbar">
+                    <!--begin::Toolbar-->
+                    <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+
+                    </div>
+                    <!--end::Toolbar-->
+                </div>
+                <!--end::Card toolbar-->
+            </div>
+            <!--end::Card header-->
+            <!--begin::Card body-->
+            <div class="card-body pt-0">
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <input type="text" id="Cnic"
+                               class="form-control form-control-solid"
+                               placeholder="CNIC / B-Form">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="Name"
+                               class="form-control form-control-solid"
+                               placeholder="Name">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="Email"
+                               class="form-control form-control-solid"
+                               placeholder="Email">
+                    </div>
+                </div>
+                <div class="row form-group mt-5">
+                    <div class="col d-flex justify-content-end">
+                        <!--begin::Export-->
+                        <button type="button" class="btn btn-light-primary me-3" id="kt-search">
+                            <!--begin::Svg Icon | path: icons/duotone/Files/Export.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black"></path>
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                            Search
+                        </button>
+                        <!--end::Export-->
+                    </div>
+                </div>
+            </div>
+            <!--end::Card body-->
+        </div>
+        <!--end::Card-->
+        <!--begin::Card-->
+        <div class="card">
+            <!--begin::Card header-->
+            <div class="card-header border-0 pt-6">
+                <!--begin::Card title-->
+                <div class="card-title">
+                    <!--begin::Search-->
+                    <div class="d-flex align-items-center position-relative my-1 mb-2 mb-md-0">
+                        <h2 class="anchor fw-bolder mb-5 fs-3">
+                            Registered Candidates
+                        </h2>
+                    </div>
+                    <!--end::Search-->
+                </div>
+                <!--end::Card title-->
+                <!--begin::Card toolbar-->
+                <div class="card-toolbar">
+                    <!--begin::Toolbar-->
+                    <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                        <!--begin::Export-->
+                        <button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+                            <!--begin::Svg Icon | path: icons/duotone/Files/Export.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <path d="M17,8 C16.4477153,8 16,7.55228475 16,7 C16,6.44771525 16.4477153,6 17,6 L18,6 C20.209139,6 22,7.790861 22,10 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 L2,9.99305689 C2,7.7839179 3.790861,5.99305689 6,5.99305689 L7.00000482,5.99305689 C7.55228957,5.99305689 8.00000482,6.44077214 8.00000482,6.99305689 C8.00000482,7.54534164 7.55228957,7.99305689 7.00000482,7.99305689 L6,7.99305689 C4.8954305,7.99305689 4,8.88848739 4,9.99305689 L4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,10 C20,8.8954305 19.1045695,8 18,8 L17,8 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                        <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 8.000000) scale(1, -1) rotate(-180.000000) translate(-12.000000, -8.000000)" x="11" y="2" width="2" height="12" rx="1" />
+                                        <path d="M12,2.58578644 L14.2928932,0.292893219 C14.6834175,-0.0976310729 15.3165825,-0.0976310729 15.7071068,0.292893219 C16.0976311,0.683417511 16.0976311,1.31658249 15.7071068,1.70710678 L12.7071068,4.70710678 C12.3165825,5.09763107 11.6834175,5.09763107 11.2928932,4.70710678 L8.29289322,1.70710678 C7.90236893,1.31658249 7.90236893,0.683417511 8.29289322,0.292893219 C8.68341751,-0.0976310729 9.31658249,-0.0976310729 9.70710678,0.292893219 L12,2.58578644 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 2.500000) scale(1, -1) translate(-12.000000, -2.500000)" />
+                                    </g>
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->Export
+                        </button>
+                        <!--end::Export-->
+                        <!--begin::Add user-->
+                        <a asp-area="" asp-controller="Candidates" asp-action="Create"
+                           class="btn btn-primary">
+                            <!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000)" x="4" y="11" width="16" height="2" rx="1" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->Create New
+                        </a>
+                        <!--end::Add user-->
+                    </div>
+                    <!--end::Toolbar-->
+                </div>
+                <!--end::Card toolbar-->
+            </div>
+            <!--end::Card header-->
+            <!--begin::Card body-->
+            <div class="card-body pt-10">
+                <!--begin::Datatable-->
+                <table id="kt_datatable_candidates" class="table align-middle table-row-dashed fs-6 gy-5">
+                    <thead>
+                        <tr class="text-start text-gray-500 fw-bolder fs-7 text-uppercase gs-0">
+                            <th>CandidateId</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Cnic</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th class="min-w-100px">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 fw-bold"></tbody>
+                </table>
+                <!--end::Datatable-->
+            </div>
+            <!--end::Card body-->
+        </div>
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Post-->
+
+@section Scripts{
+    <script src="~/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="~/scripts/candidate-data.js"></script>
+    <script>
+        $(function () {
+            $("#candidates").addClass("active");
+        });
+    </script>
+}

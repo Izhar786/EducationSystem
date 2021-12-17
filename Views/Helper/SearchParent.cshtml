@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="modal fade" tabindex="-1" id="kt_modal_searchparent">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-database fs-2 text-danger"></i>
+                    Parents Data
+                </h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="svg-icon svg-icon-2x"></span>
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+                <div class="container">
+                    <!--begin::Input group-->
+                    <div class="fv-row mb-0">
+                        <!--begin::Label-->
+                        <label class="fs-6 fw-bold form-label required">Enter Name Or CNIC</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input class="form-control form-control-lg form-control-solid"
+                               placeholder="CNIC / Name" />
+                        <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+
+                    <div class="row form-group mt-5">
+                        <div class="col d-flex justify-content-end">
+                            <!--begin::Export-->
+                            <button type="button" class="btn btn-light-primary me-3" id="kt-search">
+                                <!--begin::Svg Icon | path: icons/duotone/Files/Export.svg-->
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black"></path>
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                                Search
+                            </button>
+                            <!--end::Export-->
+                        </div>
+                    </div>
+
+                    <!--begin::Datatable-->
+                    <table id="kt_datatable_parents" class="table align-middle table-row-dashed fs-6 gy-5 mt-10 mb-10">
+                        <thead>
+                            <tr class="text-start text-gray-500 fw-bolder fs-7 text-uppercase gs-0">
+                                <th>ParentId</th>
+                                <th>Name</th>
+                                <th>Cnic</th>
+                                <th>Relation</th>
+                                <th class="min-w-100px">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-600 fw-bold"></tbody>
+                    </table>
+                    <!--end::Datatable-->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

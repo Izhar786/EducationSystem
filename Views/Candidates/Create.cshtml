@@ -1,0 +1,620 @@
+﻿@model CandidateCreateViewModel
+@{
+    ViewData["Title"] = "New Application";
+}
+
+
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+    <!--begin::Container-->
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <!--begin::Page title-->
+        <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <!--begin::Title-->
+            <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
+                Application
+            </h1>
+            <!--end::Title-->
+            <!--begin::Separator-->
+            <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+            <!--end::Separator-->
+            <!--begin::Breadcrumb-->
+            <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a asp-area="" asp-controller="Candidates" asp-action="Index"
+                       class="text-muted text-hover-primary">Candidates</a>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-200 w-5px h-2px"></span>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-dark">Application</li>
+                <!--end::Item-->
+            </ul>
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page title-->
+        <!--begin::Actions-->
+        <div class="d-flex align-items-center py-1">
+            <!--begin::Wrapper-->
+            <div class="me-4">
+            </div>
+            <!--end::Wrapper-->
+            <!--begin::Button-->
+            <!--end::Button-->
+        </div>
+        <!--end::Actions-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container">
+
+        <!--begin::Stepper-->
+        <div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid"
+             id="kt_create_application">
+            <!--begin::Aside-->
+            <div class="d-flex justify-content-center bg-white rounded justify-content-xl-start flex-row-auto w-100 w-xl-300px w-xxl-400px me-9">
+                <!--begin::Wrapper-->
+                <div class="px-6 px-lg-10 px-xxl-15 py-20">
+                    <!--begin::Nav-->
+                    <div class="stepper-nav">
+                        <!--begin::Step 1-->
+                        <div class="stepper-item current" data-kt-stepper-element="nav">
+                            <!--begin::Line-->
+                            <div class="stepper-line w-40px"></div>
+                            <!--end::Line-->
+                            <!--begin::Icon-->
+                            <div class="stepper-icon w-40px h-40px">
+                                <i class="stepper-check fas fa-check"></i>
+                                <span class="stepper-number">1</span>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Label-->
+                            <div class="stepper-label">
+                                <h3 class="stepper-title">Start Application</h3>
+                                <div class="stepper-desc fw-bold">Setup Your Account Details</div>
+                            </div>
+                            <!--end::Label-->
+                        </div>
+                        <!--end::Step 1-->
+                        <!--begin::Step 2-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Line-->
+                            <div class="stepper-line w-40px"></div>
+                            <!--end::Line-->
+                            <!--begin::Icon-->
+                            <div class="stepper-icon w-40px h-40px">
+                                <i class="stepper-check fas fa-check"></i>
+                                <span class="stepper-number">2</span>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Label-->
+                            <div class="stepper-label">
+                                <h3 class="stepper-title">Profile Details</h3>
+                                <div class="stepper-desc fw-bold">Setup Your Profile Details</div>
+                            </div>
+                            <!--end::Label-->
+                        </div>
+                        <!--end::Step 2-->
+                        <!--begin::Step 3-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Line-->
+                            <div class="stepper-line w-40px"></div>
+                            <!--end::Line-->
+                            <!--begin::Icon-->
+                            <div class="stepper-icon w-40px h-40px">
+                                <i class="stepper-check fas fa-check"></i>
+                                <span class="stepper-number">3</span>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Label-->
+                            <div class="stepper-label">
+                                <h3 class="stepper-title">Parents &amp; Fee Payer</h3>
+                                <div class="stepper-desc fw-bold">Your Parents and FeePayer Info</div>
+                            </div>
+                            <!--end::Label-->
+                        </div>
+                        <!--end::Step 3-->
+                        <!--begin::Step 4-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Line-->
+                            <div class="stepper-line w-40px"></div>
+                            <!--end::Line-->
+                            <!--begin::Icon-->
+                            <div class="stepper-icon w-40px h-40px">
+                                <i class="stepper-check fas fa-check"></i>
+                                <span class="stepper-number">4</span>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Label-->
+                            <div class="stepper-label">
+                                <h3 class="stepper-title">Application Details</h3>
+                                <div class="stepper-desc fw-bold">Set Your Application Data</div>
+                            </div>
+                            <!--end::Label-->
+                        </div>
+                        <!--end::Step 4-->
+                        <!--begin::Step 5-->
+                        <div class="stepper-item" data-kt-stepper-element="nav">
+                            <!--begin::Line-->
+                            <div class="stepper-line w-40px"></div>
+                            <!--end::Line-->
+                            <!--begin::Icon-->
+                            <div class="stepper-icon w-40px h-40px">
+                                <i class="stepper-check fas fa-check"></i>
+                                <span class="stepper-number">5</span>
+                            </div>
+                            <!--end::Icon-->
+                            <!--begin::Label-->
+                            <div class="stepper-label">
+                                <h3 class="stepper-title">Completed</h3>
+                                <div class="stepper-desc fw-bold">Woah, we are here</div>
+                            </div>
+                            <!--end::Label-->
+                        </div>
+                        <!--end::Step 5-->
+                    </div>
+                    <!--end::Nav-->
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--begin::Aside-->
+            <!--begin::Content-->
+            <div class="d-flex flex-row-fluid flex-center bg-white rounded">
+                <!--begin::Form-->
+                <form class="py-20 w-100 w-xl-700px px-9" novalidate="novalidate" id="kt_create_account_form">
+                    <!--begin::Step 1-->
+                    <div class="current" data-kt-stepper-element="content">
+                        <!--begin::Wrapper-->
+                        <div class="w-100">
+                            <!--begin::Heading-->
+                            <div class="pb-10 pb-lg-15">
+                                <!--begin::Title-->
+                                <h2 class="fw-bolder d-flex align-items-center text-dark">
+                                    Start Your Application
+                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Billing is issued based on your selected account type"></i>
+                                </h2>
+                                <!--end::Title-->
+                                <!--begin::Notice-->
+                                <div class="text-gray-400 fw-bold fs-6">
+                                    If you need more info, please check out
+                                    <a href="#" class="link-primary fw-bolder">Help Page</a>.
+                                </div>
+                                <!--end::Notice-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::Input group-->
+                            <div class="fv-row">
+                                <!--begin::Row-->
+                                <div class="row">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-12">
+                                        <!--begin::Input group-->
+                                        <label class="form-label required">Enter your NADRA CNIC / B-Form</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control form-control-lg form-control-solid"
+                                                   placeholder="" />
+                                            <button class="btn btn-primary btn-hover-rotate-end" type="button"
+                                                    id="button-search-cnic">
+                                                <i class="fas fa-search"></i>
+                                                Search
+                                            </button>
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end::Input group-->
+
+                            <div class="alert alert-primary d-flex align-items-center p-5 mb-10 mt-10">
+                                <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
+                                <span class="svg-icon svg-icon-2hx svg-icon-primary me-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="black"></path>
+                                        <path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="black"></path>
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                                <div class="d-flex flex-column">
+                                    <h4 class="mb-1 text-primary">Information</h4>
+                                    <span>Based on this information (CNIC / B-Form) system will check the existance of your data in our database.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Step 1-->
+                    <!--begin::Step 2-->
+                    <div data-kt-stepper-element="content">
+                        <!--begin::Wrapper-->
+                        <div class="w-100">
+                            <!--begin::Heading-->
+                            <div class="pb-10 pb-lg-15">
+                                <!--begin::Title-->
+                                <h2 class="fw-bolder text-dark">Profile Details</h2>
+                                <!--end::Title-->
+                                <!--begin::Notice-->
+                                <div class="text-gray-400 fw-bold fs-6">
+                                    If you need more info, please check out
+                                    <a href="#" class="link-primary fw-bolder">Help Page</a>.
+                                </div>
+                                <!--end::Notice-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::Input group-->
+                            <div class="mb-10 fv-row">
+                                <!--begin::Label-->
+                                <label class="form-label mb-3 required">Name</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-lg form-control-solid"
+                                       placeholder="" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Row-->
+                            <div class="fv-row mb-10">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <label class="form-label required">Gender</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <select class="form-select form-select-lg form-select-solid"
+                                                data-control="select2" data-placeholder="Select..."
+                                                data-allow-clear="true" data-hide-search="true">
+                                            <option></option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                        </select>
+                                        <!--end::Input-->
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <!--begin::Label-->
+                                        <label class="form-label required">Date of birth</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" class="form-control form-control-lg form-control-solid"
+                                               placeholder="" />
+                                        <!--end::Input-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Row-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Step 2-->
+                    <!--begin::Step 3-->
+                    <div data-kt-stepper-element="content">
+                        <!--begin::Wrapper-->
+                        <div class="w-100">
+                            <!--begin::Heading-->
+                            <div class="pb-10 pb-lg-12">
+                                <!--begin::Title-->
+                                <h2 class="fw-bolder text-dark">Parents &amp; Fee Payer Details</h2>
+                                <!--end::Title-->
+                                <!--begin::Notice-->
+                                <div class="text-gray-400 fw-bold fs-6">
+                                    If you need more info, please check out
+                                    <a href="#" class="link-primary fw-bolder">Help Page</a>.
+                                </div>
+                                <!--end::Notice-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Input group-->
+                                <!--begin::Label-->
+                                <label class="form-label required">Parent (Father or Mother)</label>
+                                <!--end::Label-->
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control form-control-lg form-control-solid"
+                                           placeholder="" />
+                                    <button class="btn btn-primary btn-hover-rotate-end" type="button"
+                                            id="button-search-parent">
+                                        <i class="fas fa-search"></i>
+                                        Search
+                                    </button>
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Input group-->
+                                <!--begin::Label-->
+                                <label class="form-label required">Fee Payer</label>
+                                <!--end::Label-->
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control form-control-lg form-control-solid"
+                                           placeholder="" />
+                                    <button class="btn btn-primary btn-hover-rotate-end" type="button"
+                                            id="button-search-feepayer">
+                                        <i class="fas fa-search"></i>
+                                        Search
+                                    </button>
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-0">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold form-label required">Contact Email</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid"
+                                       placeholder="user@domain.com" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Step 3-->
+                    <!--begin::Step 4-->
+                    <div data-kt-stepper-element="content">
+                        <!--begin::Wrapper-->
+                        <div class="w-100">
+                            <!--begin::Heading-->
+                            <div class="pb-10 pb-lg-15">
+                                <!--begin::Title-->
+                                <h2 class="fw-bolder text-dark">Application Details</h2>
+                                <!--end::Title-->
+                                <!--begin::Notice-->
+                                <div class="text-gray-400 fw-bold fs-6">
+                                    If you need more info, please check out
+                                    <a href="#" class="text-primary fw-bolder">Help Page</a>.
+                                </div>
+                                <!--end::Notice-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label required">Session</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select class="form-select form-select-lg form-select-solid"
+                                        data-control="select2" data-placeholder="Select..."
+                                        data-allow-clear="true" data-hide-search="false">
+                                    <option></option>
+                                    <option value="2020-21">2021-21</option>
+                                    <option value="2021-22">2021-22</option>
+                                </select>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label required">Class</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select class="form-select form-select-lg form-select-solid"
+                                        data-control="select2" data-placeholder="Select..."
+                                        data-allow-clear="true" data-hide-search="false">
+                                    <option></option>
+                                    <option value="1">First (I)</option>
+                                    <option value="2">Second (II)</option>
+                                    <option value="3">Third (II)</option>
+                                    <option value="4">Fourth (II)</option>
+                                    <option value="5">Fifth (II)</option>
+                                    <option value="6">Sixth (II)</option>
+                                    <option value="7">Seventh (II)</option>
+                                    <option value="8">Eight (II)</option>
+                                    <option value="9">Ninth (II)</option>
+                                    <option value="10">Tenth (II)</option>
+                                    <option value="11">1st Year (II)</option>
+                                    <option value="12">2nd Year (II)</option>
+                                </select>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label required-">Group <small class="text-muted">(First Priority)</small></label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select class="form-select form-select-lg form-select-solid"
+                                        data-control="select2" data-placeholder="Select..."
+                                        data-allow-clear="true" data-hide-search="false">
+                                    <option></option>
+                                    <option value="1">Pre-Engg</option>
+                                    <option value="2">Pre-Medical</option>
+                                    <option value="3">Computer Science</option>
+                                </select>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label required-">Group <small class="text-muted">(Second Priority)</small></label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select class="form-select form-select-lg form-select-solid"
+                                        data-control="select2" data-placeholder="Select..."
+                                        data-allow-clear="true" data-hide-search="false">
+                                    <option></option>
+                                    <option value="1">Pre-Engg</option>
+                                    <option value="2">Pre-Medical</option>
+                                    <option value="3">Computer Science</option>
+                                </select>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Step 4-->
+                    <!--begin::Step 5-->
+                    <div data-kt-stepper-element="content">
+                        <!--begin::Wrapper-->
+                        <div class="w-100">
+                            <!--begin::Heading-->
+                            <div class="pb-8 pb-lg-10">
+                                <!--begin::Title-->
+                                <h2 class="fw-bolder text-dark">Your Are Done!</h2>
+                                <!--end::Title-->
+                                <!--begin::Notice-->
+                                <div class="text-gray-400 fw-bold fs-6">
+                                    If you need more info, please check out
+                                    <a href="#" class="text-primary fw-bolder">Help Page</a>.
+                                </div>
+                                <!--end::Notice-->
+                            </div>
+                            <!--end::Heading-->
+                            <!--begin::Body-->
+                            <div class="mb-0">
+                                <!--begin::Text-->
+                                <div class="fs-6 text-gray-600 mb-5">
+                                    Your all profile, parents, and application details have been collected. You may review your details before proceeding further.
+                                </div>
+                                <!--end::Text-->
+                                <!--begin::Alert-->
+                                <!--begin::Notice-->
+                                <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6">
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotone/Code/Warning-1-circle.svg-->
+                                    <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
+                                            <rect fill="#000000" x="11" y="7" width="2" height="8" rx="1" />
+                                            <rect fill="#000000" x="11" y="16" width="2" height="2" rx="1" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-stack flex-grow-1">
+                                        <!--begin::Content-->
+                                        <div class="fw-bold">
+                                            <h4 class="text-gray-800 fw-bolder">We need your attention!</h4>
+                                            <div class="fs-6 text-gray-600">
+                                                To submit your application, please click 
+                                                <a href="#" class="fw-bolder">Submit</a>
+                                            </div>
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Notice-->
+                                <!--end::Alert-->
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Step 5-->
+                    <!--begin::Actions-->
+                    <div class="d-flex flex-stack pt-10">
+                        <!--begin::Wrapper-->
+                        <div class="mr-2">
+                            <button type="button" class="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+                                <!--begin::Svg Icon | path: icons/duotone/Navigation/Left-2.svg-->
+                                <span class="svg-icon svg-icon-4 me-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                            <rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000)" x="14" y="7" width="2" height="10" rx="1" />
+                                            <path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997)" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->Back
+                            </button>
+                        </div>
+                        <!--end::Wrapper-->
+                        <!--begin::Wrapper-->
+                        <div>
+                            <button type="button" class="btn btn-lg btn-primary me-3" data-kt-stepper-action="submit">
+                                <span class="indicator-label">
+                                    Submit
+                                    <!--begin::Svg Icon | path: icons/duotone/Navigation/Right-2.svg-->
+                                    <span class="svg-icon svg-icon-3 ms-2 me-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <polygon points="0 0 24 0 24 24 0 24" />
+                                                <rect fill="#000000" opacity="0.5" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="indicator-progress">
+                                    Please wait...
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">
+                                Continue
+                                <!--begin::Svg Icon | path: icons/duotone/Navigation/Right-2.svg-->
+                                <span class="svg-icon svg-icon-4 ms-1 me-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                            <rect fill="#000000" opacity="0.5" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                            <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                            </button>
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Stepper-->
+
+
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Post-->
+
+@section Scripts{
+    <script src="~/scripts/create-application.js"></script>
+    <script>
+        $(function () {
+            $("#candidates").addClass("active");
+
+            let placeholderElement = $('#modal-placeholder');
+
+            $("#button-search-parent").on("click", function (e) {
+                e.preventDefault();
+
+                let btn = $(this);
+
+                $.ajax({
+                    url: '/Helper/SearchParent',
+                    type: 'GET',
+                    success: function (response) {
+                        placeholderElement.html(response);
+                        placeholderElement.find('.modal').modal('show');
+                    },
+                    error: function () {}
+                })
+            });
+        });
+    </script>
+}
